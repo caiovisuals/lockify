@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV@100..900,0&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    font-family: "Geologica";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #181818;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.header-text h1 {
+    font-size: 30px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.header-text h3 {
+    font-size: 15px;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: normal;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.15s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+#result {
+    cursor: default;
+}
+
+#result.has-value {
+    cursor: pointer;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #22c55e;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}

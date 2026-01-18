@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<div id="toast" class="toast">Senha copiada!</div>
+<body>
+    <div class="container">
+        <div class="header-text">
+            <h1>Gerador de Senhas</h1>
+            <h3>Feito com python</h3>
+        </div>
+        <label>
+            Tamanho da senha:
+            <input type="number" id="size" min="4" max="64" value="16">
+        </label>
+        <div class="options">
+            <label>
+                <input type="checkbox" id="letters" checked>
+                Letras
+            </label>
+            <label>
+                <input type="checkbox" id="numbers" checked>
+                Números
+            </label>
+            <label>
+                <input type="checkbox" id="symbols" checked>
+                Símbolos
+            </label>
+        </div>
+        <button onclick="generatePassword()">Gerar senha</button>
+        <input
+            type="text"
+            id="result"
+            placeholder="Sua senha aparecerá aqui"
+            readonly
+        />
+    </div>
+    <script src="backend/script.js"></script>
+</body>
+</html>
