@@ -7,8 +7,8 @@
 }
 
 body {
-    background: #0f0f0f;
-    color: #fff;
+    background: var(--background);
+    color: var(--text);
     font-family: "Geologica";
     display: flex;
     justify-content: center;
@@ -16,19 +16,27 @@ body {
     height: 100vh;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .container {
-    background: #181818;
+    background: var(--foreground);
     padding: 25px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    min-width: 500px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
 }
 
 .container label {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .header-text {
@@ -38,38 +46,52 @@ body {
 }
 
 .header-text h1 {
-    font-size: 30px;
+    font-size: 35px;
     white-space: nowrap;
     text-align: center;
 }
 
 .header-text h3 {
     font-size: 15px;
+    color: var(--subtext);
     white-space: nowrap;
     text-align: center;
     font-weight: normal;
 }
 
-.options {
+.strength-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.strength-label {
     display: flex;
     justify-content: space-between;
-}
-
-button {
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
+    align-items: center;
     font-size: 16px;
-    transition: all 0.15s ease-in-out;
+    color: var(--muted);
+    letter-spacing: 1px;
 }
 
-button:hover {
-    opacity: 0.85;
-    transition: all 0.15s ease-in-out;
+.strength-text {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.strength-bar {
+    height: 4px;
+    background: var(--middleground);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    border-radius: 99px;
+    width: 100%;
+    background: var(--middleground);
+    transition: width 0.4s ease, background 0.4s ease;
 }
 
 input[type="text"],
@@ -78,7 +100,42 @@ input[type="number"] {
     border-radius: 6px;
     border: none;
     outline: none;
+    font-size: 18px;
     width: 100%;
+}
+
+.container-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    padding: 15px 10px;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.15s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.95);
+    transition: all 0.15s ease-in-out;
 }
 
 #result {
@@ -94,7 +151,7 @@ input[type="number"] {
     bottom: 20px;
     right: 20px;
     background: #22c55e;
-    color: #fff;
+    color: var(--text);
     padding: 12px 20px;
     border-radius: 8px;
     font-size: 14px;
@@ -107,4 +164,17 @@ input[type="number"] {
 .toast.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+#caption {
+    color: var(--subtext);
+}
+
+:root {
+    --background: #0f0f0f;
+    --foreground: #202020;
+    --middleground: #323232;
+    --primary: #893fcf;
+    --text: #fff;
+    --subtext: #AAA;
 }

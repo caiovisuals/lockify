@@ -2,42 +2,57 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <title>Gerador de Senhas</title>
+    <title>Lockify - Gerador de Senhas Seguras</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <div id="toast" class="toast">Senha copiada!</div>
 <body>
-    <div class="container">
-        <div class="header-text">
-            <h1>Gerador de Senhas</h1>
-            <h3>Feito com python</h3>
+    <section>
+        <div class="container">
+            <div class="header-text">
+                <h1>Lockify</h1>
+                <h3>Gerador de Senhas Seguras</h3>
+            </div>
+            <div class="strength-section">
+                <div class="strength-label">
+                    <span>Força</span>
+                    <span class="strength-text" id="strengthText">—</span>
+                </div>
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+            </div>
+            <input
+                type="text"
+                id="result"
+                placeholder="Sua senha aparecerá aqui"
+                readonly
+            />
+            <label>
+                <span>Tamanho da senha:</span>
+                <input type="number" id="size" min="4" max="64" value="16">
+            </label>
+            <div class="container-options">
+                <span>Caracteres:</span>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="letters" checked>
+                        Letras
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers" checked>
+                        Números
+                    </label>
+                    <label>
+                        <input type="checkbox" id="symbols" checked>
+                        Símbolos
+                    </label>
+                </div>
+            </div>
+            <button onclick="generatePassword()">Gerar senha</button>
         </div>
-        <label>
-            Tamanho da senha:
-            <input type="number" id="size" min="4" max="64" value="16">
-        </label>
-        <div class="options">
-            <label>
-                <input type="checkbox" id="letters" checked>
-                Letras
-            </label>
-            <label>
-                <input type="checkbox" id="numbers" checked>
-                Números
-            </label>
-            <label>
-                <input type="checkbox" id="symbols" checked>
-                Símbolos
-            </label>
-        </div>
-        <button onclick="generatePassword()">Gerar senha</button>
-        <input
-            type="text"
-            id="result"
-            placeholder="Sua senha aparecerá aqui"
-            readonly
-        />
-    </div>
+        <span id="caption">feito com python - by caiothevisual</span>
+    </section>
     <script src="backend/script.js"></script>
 </body>
 </html>

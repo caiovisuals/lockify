@@ -1,7 +1,11 @@
 # LOCKIFY
 
-Um gerador de senhas seguras desenvolvido com FastAPI (Python) no backend e HTML, CSS e JavaScript no frontend.<br/>
+Um gerador de senhas seguras desenvolvido com FastAPI (Python) no backend e HTML, CSS e JavaScript no front-end.<br/>
 Este projeto é livre para estudo e aprendizado, ele permite personalizar o tamanho da senha e escolher se ela deve conter letras, números e símbolos.
+
+## Capturas de Telas
+
+![Tela Principal](assets/screenshots/1.png)
 
 ## Funcionalidades
 
@@ -14,26 +18,19 @@ Este projeto é livre para estudo e aprendizado, ele permite personalizar o tama
 ## Como Executar o Projeto
 
 ### Clonar o repositório
-```
+```bash
 git clone https://github.com/caiovisuals/lockify
 cd lockify
 ```
 
-### Criar ambiente virtual (opcional, mas recomendado)
-```
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-```
-
 ### Instalar as dependências
-```
+```bash
 pip install fastapi uvicorn
 ```
 
 ### Rodar o servidor FastAPI
-```
-uvicorn main:app --reload
+```bash
+uvicorn backend.main:app --reload
 
 O backend estará disponível em:
 http://localhost:8000
